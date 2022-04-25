@@ -19,7 +19,8 @@ def home():
 @app.route('/process',methods=('POST','GET'))
 def process():
     if request.method == 'POST':
-        city = request.form['city']
+        city = request.form['city'] #when using plain text field on index.html
+        #city = request.form['value'] #when using drop-down on index.html
         preferences = request.form['preferences']
         num_days = request.form['num_days']
         recommendations = get_recommendations(city,preferences,num_days)
@@ -134,7 +135,7 @@ def make_query(query,city):
     ans_df=mumbai_data[mumbai_data['place'].isin(ans_placesc)]
     return ans_df
   else:
-    ##handle this exception
+    ## this case will never run, as we're providing the user only the above options, to fill from!!
     return None
 
   
