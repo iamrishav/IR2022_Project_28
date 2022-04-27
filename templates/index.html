@@ -9,10 +9,10 @@
     <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/style.css') }}">
 </head>
 <body background="{{ url_for('static', filename='images/collage.jpeg') }}">
-    <h1 class = "travel_head">Welcome to Campfire travel recommender system!</h1>
-    <h1 class = "travel_subhead">We give you the most relevant recommendations of tourist places in your city
+    <h1 class = "travel_head">Welcome to Campfire travel planning system!</h1>
+    <h1 class = "travel_subhead">We give you the most relevant suggestions of tourist places in your city
         of choice, considering your interests and inclinations! Not just that, we also give due value to your time!,
-        that's why we suggest you an efficient day-wise schedule of all the top places that match your preferences,
+        that's why we suggest you an efficient day-wise schedule of the top 10 places that match your preferences,
         that'll save both your time and money! Give it a try! :) 
     </h1>
     <div>
@@ -44,7 +44,7 @@
                 <option value="8">8</option>
                 <option value="9">9</option>
             </select>
-            <button class = "submit" type="submit" name="submit_city">Search</button>
+            <button class = "submit" type="submit" name="submit_city">Submit</button>
         </form>
     </div>
 </body>

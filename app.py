@@ -2,6 +2,7 @@ from flask import Flask,render_template,request
 import joblib
 import pandas as pd
 import numpy as np
+from textblob import TextBlob
 import flair
 from flair.data import Sentence
 from flair.embeddings import WordEmbeddings, DocumentPoolEmbeddings
@@ -46,6 +47,10 @@ def make_query(query,city):
   glove_embedding = WordEmbeddings('glove')
 
   document_embeddings = DocumentPoolEmbeddings([glove_embedding])
+  ##adding spell check parts##
+  query = TextBlob(query)
+  query = str(query.correct())  
+  ##finished adding spell check parts##
   sentence = Sentence(query)
   document_embeddings.embed(sentence)
   matrix1 = sentence.get_embedding().cpu().numpy()
